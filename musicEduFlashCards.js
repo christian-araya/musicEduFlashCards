@@ -11,7 +11,7 @@
 
 //Program Name: Major Key Transposer
 
-let completeList = ['Cb', 'C', 'C#', 'Db', 'D', 'D#', 'Eb', 'E', 'E#', 'Fb', 'F', 'F#', 'Gb', 'G', 'G#', 'Ab', 'A', 'A#', 'Bb', 'B', 'B#'];
+let completeList = ['Cb', 'C', 'C#', 'Db', 'D', 'D#', 'Eb', 'E', 'E#', 'Fb', 'F', 'F#', 'Gb', 'G', 'G#', 'Ab', 'A', 'A#', 'Bb', 'B', 'B#']; //21 notes of all enharmonic and non-enharmonic notes (7bs, 7#s, and 7not-accidental)
 let stepAndAHalfDownList = ['Ab', 'A', 'A#', 'Bb', 'B', 'B#', 'Cb', 'C', 'C#', 'Db', 'D', 'D#', 'Eb', 'E', 'E#', 'Fb', 'F', 'F#', 'Gb', 'G', 'G#' ];
 let quality = ['major', 'minor'];
 let cKey = ['C', 'B', 'Bb', 'A#', 'A', 'Ab', 'G#', 'G', 'Gb', 'F#', 'F', 'E', 'Eb', 'D#', 'D', 'Db', 'C#'];
@@ -20,7 +20,7 @@ let randomNumb = randomZeroToTwenty();
 let randomEnhInt = randomIntEnhList();
 let randomNonEnhInt = randomIntNonEnhList();
 var transposeRequest = completeList[randomNumb];
-var transposeSolution = ebKey[randomNonEnhInt];
+var transposeSolution = stepAndAHalfDownList[randomNumb];
 
 //Node require function for prompt module
 const prompt = require('prompt');
@@ -33,10 +33,10 @@ console.log(`What is the transposed equivalent of ${transposeRequest}?`);
 prompt.get(['userResponse'], function (err, result) {
     if (err) { return onErr(err); }
     console.log('You entered: ' + result.userResponse);
-    if ((transposeRequest == 'A#') || (transposeRequest == 'G#') || (transposeRequest == 'F#') || (transposeRequest == 'D#') || (transposeRequest =='C#')) {
-      return transposeExceptionsFxn();
-    }
-    else {
+    // if ((transposeRequest == 'A#') || (transposeRequest == 'G#') || (transposeRequest == 'F#') || (transposeRequest == 'D#') || (transposeRequest =='C#')) {
+    //   return transposeExceptionsFxn();
+    // }
+    // else {
       console.log("When you transpose " + transposeRequest + " you get: " + transposeSolution);
     }
 
