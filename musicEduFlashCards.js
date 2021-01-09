@@ -38,18 +38,13 @@ prompt.get(['userResponse'], function (err, result) {
     // }
     // else {
       console.log("When you transpose " + transposeRequest + " you get: " + transposeSolution);
-    }
+
 
 });
 
 
 
-// if ((transposeRequest != 'A#') || (transposeRequest != 'G#') || (transposeRequest != 'F#') || (transposeRequest != 'D#') || (transposeRequest !='C#')) {
-//   console.log("When you transpose " + transposeRequest + " you get: " + transposeSolution);
-// }
-// else {
-//   return transposeFxn();
-// }
+
 
 
 function onErr(err) {
@@ -60,6 +55,7 @@ function onErr(err) {
 // Get random number from 0-20 for list of notes with Enharmonic equivalent
 function randomZeroToTwenty() {
   return Math.floor((Math.random() * 20) + 1);
+}
 
 // Get random number from 0-16 for list of notes with Enharmonic equivalent
 function randomIntEnhList() {
@@ -94,7 +90,3 @@ function transposeExceptionsFxn() {
 
   console.log("When you transpose " + transposeRequest + " you get: " + solution);
 }
-
-
-//NOTE: YOU STILL HAVE TO ACCOUNT FOR Enharmonic equivalents ex if transposeRequest is A# yeah the equivalent is G but
-//if it's Bb it should also be G, not G# as it's currently programmed
